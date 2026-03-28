@@ -44,12 +44,12 @@
     </header>
     <nav>
         <div class="container">
-            <a href="#reviews">Reviews</a>
-            <a href="#comparisons">Comparisons</a>
-            <a href="#guides">Guides</a>
-            <a href="#productivity">Productivity</a>
-            <a href="#business">Business</a>
-            <a href="#writing">Writing</a>
+            <a href="#articles">Reviews</a>
+            <a href="#articles">Comparisons</a>
+            <a href="#articles">Guides</a>
+            <a href="#articles">Productivity</a>
+            <a href="#articles">Business</a>
+            <a href="#articles">Writing</a>
         </div>
     </nav>
     <main class="container">
@@ -86,9 +86,19 @@
                 </div>
             </div>
         </section>
+        <section style="background:#1a1a2e;border:1px solid #333;border-radius:12px;padding:40px 24px;margin:40px 0;text-align:center;">
+            <h3 style="color:#fff;font-size:22px;margin-bottom:8px;">Get Weekly AI Insights</h3>
+            <p style="color:#888;font-size:14px;margin-bottom:20px;">Join 2,000+ professionals. Free weekly newsletter with the best AI tool reviews.</p>
+            <form action="https://costuras-meditacoes.vercel.app/api/newsletter/subscribe" method="POST" style="display:flex;gap:8px;max-width:420px;margin:0 auto;flex-wrap:wrap;justify-content:center;">
+                <input type="hidden" name="audience" value="20a1b639-8752-4008-9db2-2bf54e98da51">
+                <input type="email" name="email" placeholder="your@email.com" required style="flex:1;min-width:200px;padding:12px 16px;border-radius:8px;border:1px solid #333;background:#0f0f1a;color:#fff;font-size:14px;">
+                <button type="submit" style="padding:12px 24px;border-radius:8px;border:none;background:var(--accent, #7c3aed);color:#fff;font-weight:600;cursor:pointer;font-size:14px;">Subscribe Free</button>
+            </form>
+        </section>
     </main>
     <footer>
         <p>AI Tools Hub &copy; 2026 | <a href="https://marinaveauvy.com.br">Marina Veauvy</a> | Reviews are independent. Some links are affiliate links.</p>
+        <p style="margin-top:8px;"><a href="about.html">About</a> | <a href="privacy.html">Privacy Policy</a></p>
     </footer>
 </body>
 </html>

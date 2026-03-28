@@ -88,6 +88,16 @@ Respond with JSON:
   return JSON.parse(text);
 }
 
+const IN_ARTICLE_AD = `<div style="margin:24px 0;text-align:center;"><ins class="adsbygoogle" style="display:block;text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="${ADSENSE_ID}" data-ad-slot="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div>`;
+
+function insertAds(content) {
+  let count = 0;
+  return content.replace(/<h2/g, (match) => {
+    count++;
+    return count === 3 ? IN_ARTICLE_AD + match : match;
+  });
+}
+
 function buildHTML(article) {
   return `<!DOCTYPE html>
 <html lang="en">
@@ -126,7 +136,8 @@ function buildHTML(article) {
         <a href="../index.html" class="back">&larr; Back to AI Tools Hub</a>
         <h1>${article.title}</h1>
         <div class="meta">Updated ${new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })} &bull; AI Tools Hub</div>
-        ${article.content}
+        ${insertAds(article.content)}
+        <div style="margin:32px 0;"><ins class="adsbygoogle" style="display:block" data-ad-format="autorelaxed" data-ad-client="${ADSENSE_ID}" data-ad-slot="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div>
         <div class="affiliate-note">
             <strong>Disclosure:</strong> Some links in this article are affiliate links. We may earn a commission at no extra cost to you. This helps us keep creating free content.
         </div>
